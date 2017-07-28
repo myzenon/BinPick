@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import { View } from 'react-native'
+import Navigation from './Navigation'
 
 export default class Root extends Component {
     state = {  }
     render() {
         return (
-            <View>
-                
-            </View>
+            <Navigation />
         )
     }
 }
