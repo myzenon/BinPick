@@ -1,3 +1,4 @@
 export default {
-    greeting: 'Hello'
+    greeting: 'Hello',
+    category: 'Category'
 }

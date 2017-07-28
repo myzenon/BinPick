@@ -1,3 +1,4 @@
 export default {
-    greeting: 'สวัสดี'
+    greeting: 'สวัสดี',
+    category: 'หมวดหมู่'
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { StatusBar, View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
 import { Container, Header, Body, Title, Left, Button, Icon, Right } from 'native-base'
 import styles from './styles'
+import locales from '../../locales'
 
 const categories = {
     FOOD : {
@@ -82,7 +83,7 @@ export default class Category extends Component {
                         </Button>
                     </Left>
                     <Body>
-                        <Title style={styles.title}> Category </Title>
+                        <Title style={styles.title}>{locales.t('category')}</Title>
                     </Body>
                     <Right />
                 </Header>
