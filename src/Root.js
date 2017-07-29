@@ -1,10 +1,35 @@
 import React, { Component } from 'react'
+import { View } from 'react-native'
+import { Provider } from 'react-redux'
+import { Spinner } from 'native-base'
+import Store from './Store'
 import Navigation from './Navigation'
 
-export default class Root extends Component {
-    render() {
+class Root extends Component {
+    componentWillMount () {
+        this.state = {
+            isLoading: true,
+            store: Store(() => this.setState({ isLoading: false })),
+        };
+    }
+    render () {
+        if (this.state.isLoading) {
+            return (
+                <View style={{
+                    flex: 1,
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+                    <Spinner color="black" />
+                </View>
+            )
+        }
         return (
-            <Navigation />
+            <Provider store={this.state.store}>
+                <Navigation />
+            </Provider>
         )
     }
 }
+
+export default Root
