@@ -1,4 +1,5 @@
 export default {
     greeting: 'สวัสดี',
-    category: 'หมวดหมู่'
+    category: 'หมวดหมู่',
+    statistic: 'สถิติ'
 }

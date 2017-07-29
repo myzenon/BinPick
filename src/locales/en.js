@@ -1,4 +1,5 @@
 export default {
     greeting: 'Hello',
-    category: 'Category'
+    category: 'Category',
+    statistic: 'Statistic'
 }
