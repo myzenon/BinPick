@@ -1,23 +1,83 @@
 import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     wrapper: {
-        backgroundColor: '#00695C'
+        backgroundColor: '#00695C',
+    },
+    fixedWrapper: {
+
     },
     logoWrapper: {
-        flex: 3
+        flex: 2,
+        // height: '25%',
+        marginTop: 50,
+        marginLeft: 30,
+        marginRight: 30,
+        marginBottom: 20
     },
     selectBinWrapper: {
         flex: 4,
+        // height: '50%',
         backgroundColor: '#FFF'
     },
     sliderWrapper: {
         flex: 2,
+        // height: '30%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },
     statsWrapper: {
-        flex: 1
+        flex: 1,
+        // height: '20%',
+        alignItems: 'center',
+    },
+
+    logoImage: {
+        flex: 1,
+        // height:'100%',
+        width: '100%',
+        resizeMode: 'contain'
+    },
+
+    binWrapper: {
+        flex: 1,
+        flexDirection: 'row',
+        marginTop: 50,
+        marginLeft: 20,
+        marginRight: 20,
+    },
+    binImageWrapper: {
+        flex: 1,
+        // borderWidth: 1,
+        position: 'relative'
+        // backgroundColor: 'red'
+    },
+    binImage: {
+        flex: 1,
+        width: '100%',
+        // height: '100%',
+        resizeMode: 'contain'
+    },
+    binSuggestWrapper: {
+        alignItems: 'center',
+        marginTop: 20,
+        marginBottom: 30
+    },
+    binSuggestText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#606060'
+    },
+
+    checkWrapper: {
+        position: 'absolute',
+        right: 5,
+        top: 5
+    },
+    checkImage: {
+        flex: 1,
+        width: 25,
+        height: 25
     },
 
     sliderFrame: {
@@ -59,8 +119,19 @@ export default StyleSheet.create({
         borderRadius: 3,
         // width: 500,
         // height: 100,
-        flex: 1,
-        margin: 15,
-        backgroundColor: 'rgba(255, 255, 255, 0.8)'
+        // flex: 1,
+        flexDirection: 'row',
+        margin: 13,
+        backgroundColor: 'rgba(255, 255, 255, 0.9)'
+    },
+    sliderBinImage: {
+        width: 15,
+        height: 25,
+        resizeMode: 'contain'
+    },
+
+    statsIcon: {
+        fontSize: 25,
+        color: '#FFF'
     }
 })

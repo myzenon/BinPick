@@ -1,3 +1,4 @@
 export default {
-    greeting: 'Hello'
+    binSuggest: 'SELECT YOUR BINS',
+    binSlide: 'SLIDE'
 }

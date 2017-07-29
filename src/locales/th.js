@@ -1,3 +1,4 @@
 export default {
-    greeting: 'สวัสดี'
+    binSuggest: 'เลือกถังขยะของคุณ',
+    binSlide: 'เลื่อน'
 }

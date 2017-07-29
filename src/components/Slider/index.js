@@ -1,3 +1,6 @@
+// Original Source Code by sreejithr/react-native-slide-button
+// Improve & Edit by Zenon 'SI
+
 import React, { Component } from 'react'
 import { View, StyleSheet, PanResponder, Animated } from 'react-native'
 
@@ -34,14 +37,14 @@ class SlideButton extends Component {
                     })
 
                     // Slide it back in after 1 sec
-                    setTimeout(() => {
-                        this.snapToPosition(() => {
-                            this.setState({
-                                released: false,
-                                dx: this.state.initialX
-                            })
-                        })
-                    }, 1000)
+                    // setTimeout(() => {
+                    //     this.snapToPosition(() => {
+                    //         this.setState({
+                    //             released: false,
+                    //             dx: this.state.initialX
+                    //         })
+                    //     })
+                    // }, 5000)
 
                 } else {
                     this.snapToPosition(() => {
