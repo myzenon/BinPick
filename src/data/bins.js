@@ -23,7 +23,7 @@ export default {
     },
     recycle: {
         name: {
-            en: 'Rycycle',
+            en: 'Recycle',
             th: 'ขยะรีไซเคิล'
         },
         color: {
