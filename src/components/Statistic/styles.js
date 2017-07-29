@@ -12,33 +12,34 @@ export default StyleSheet.create({
         fontSize: 25,
         color: '#FFF'
     },
-    contentWrapper: {
-        backgroundColor: 'pink'
-    },
     cardWrapper: {
         flexDirection: 'column',
         backgroundColor: '#FFF',
         marginLeft: 16,
         marginRight: 16,
-        marginTop: 20
+        marginTop: 20,
+        marginBottom: 16
     },
     binsWrapper: {
-        paddingLeft: 20,
-        paddingRight: 20,
-        paddingBottom: 20
+        marginRight: 16,
+        marginBottom: 16
     },
     bin: {
         flexDirection: 'row',
-        height: 60,
-        marginTop: 20
+        height: 70,
+        marginTop: 25
     },
     binImageWrapper: {
         flex: 1,
-        backgroundColor: 'red'
+        alignItems: 'center'
+    },
+    binImage: {
+        flex: 1,
+        width: 200,
+        resizeMode: 'contain'
     },
     binDetail: {
         flex: 4,
-        paddingLeft: 20
     },
     binLabel: {
         flex: 1,
