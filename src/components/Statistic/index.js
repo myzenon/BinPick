@@ -1,43 +1,16 @@
 import React, { Component } from 'react'
-import { StatusBar, View, Image, ScrollView } from 'react-native'
+import { View, Image, ScrollView } from 'react-native'
 import { Container, Header, Left, Button, Icon, Body, Right, Title, Text } from 'native-base'
 import styles from './styles'
 import locales from '../../locales'
 import bins from '../../data/bins'
 import elevation from '../../utils/elevation'
+import { Actions } from 'react-native-router-flux'
+import { connect } from 'react-redux'
 
-// const teamID = '2'
-// const secretKey = 'C8mGT9'
-export default class Statistic extends Component {
-    state = {
-        bin_statistics: {
-            general: 300,
-            compostable: 20,
-            recycle: 190,
-            hazardous: 0,
-            can: 5
-        }
-    }
-
-
-    // componentWillMount() {
-    //     fetch('http://smartbin.devfunction.com/api/?team_id=' + teamID + '&secret=' + secretKey)
-    //     .then((response) => response.json())
-    //     .then((responseJSON) => {
-    //         // console.log(responseJSON.data.bin_statistics)
-    //         this.setState({
-    //             bin_statistics: responseJSON.data.bin_statistics
-    //         })
-    //     })
-    //     .catch((error) => {
-    //         console.warn(error)
-    //     })
-    // }
-
+class Statistic extends Component {
     calculatePercentage(bin) {
-        const allTrash = this.state.bin_statistics.general + this.state.bin_statistics.compostable + this.state.bin_statistics.recycle
-                     + this.state.bin_statistics.hazardous + this.state.bin_statistics.can
-
+        const allTrash = Object.keys(this.props.bin_statistics).reduce((sum, binKey) => sum += parseInt(this.props.bin_statistics[binKey]), 0)
         return (bin / allTrash) * 100
     }
 
@@ -46,7 +19,10 @@ export default class Statistic extends Component {
             <Container>
                  <Header style={styles.header}>
                     <Left>
-                        <Button transparent>
+                        <Button
+                            transparent
+                            onPress={() => Actions.pop()}
+                        >
                             <Icon ios="ios-arrow-back" android="md-arrow-back" style={styles.icon} />
                         </Button>
                     </Left>
@@ -55,25 +31,26 @@ export default class Statistic extends Component {
                     </Body>
                     <Right />
                 </Header>
-                <StatusBar backgroundColor="#004D40" barStyle="light-content" />
+                {this.props.renderStatusBar(this.props.name)}
                 <ScrollView>
-                    <View style={[styles.cardWrapper ,elevation(10)]}>
+                    <View style={[styles.cardWrapper, elevation(10)]}>
                         <View style={styles.binsWrapper}>
                             {
-                                Object.keys(bins).map((bin) => {
+                                Object.keys(bins).map((binKey) => {
+                                    const percentage = this.calculatePercentage(this.props.bin_statistics[binKey])
                                     return (
-                                        <View style={styles.bin} key={bin}>
+                                        <View style={styles.bin} key={binKey}>
                                             <View style={styles.binImageWrapper}>
-                                                <Image style={styles.binImage} source={bins[bin].image} />
+                                                <Image style={styles.binImage} source={bins[binKey].image} />
                                             </View>
                                             <View style={styles.binDetail}>
                                                 <View style={styles.binLabel}>
-                                                    <Text style={styles.binName}>{bins[bin].name.en}</Text>
-                                                    <Text style={styles.binPercent}>{this.calculatePercentage(this.state.bin_statistics[bin]).toFixed(1) + '%'}</Text>
+                                                    <Text style={styles.binName}>{locales.getTrashText(bins[binKey].name)}</Text>
+                                                    <Text style={styles.binPercent}>{percentage.toFixed(1) + '%'}</Text>
                                                 </View>
                                                 <View style={styles.statWrapper}>
-                                                    <View style={[styles.progressBar, {flex: this.calculatePercentage(this.state.bin_statistics[bin])}]} />
-                                                    <View style={[styles.totalBar, {flex: 100 - this.calculatePercentage(this.state.bin_statistics[bin])}]} />
+                                                    <View style={[styles.progressBar, {flex: percentage}]} />
+                                                    <View style={[styles.totalBar, {flex: 100 - percentage}]} />
                                                 </View>
                                             </View>
                                         </View>
@@ -87,3 +64,13 @@ export default class Statistic extends Component {
         )
     }
 }
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        bin_statistics: state.statistics.bin_statistics
+    }
+}
+
+export default connect(
+    mapStateToProps
+)(Statistic)

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import selectedBins from './selectedBins'
-import routes from './routes'
+import statistics from './statistics'
 
 export default combineReducers({
     selectedBins,
-    routes
+    statistics
 })

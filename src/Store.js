@@ -1,4 +1,4 @@
-import { AsyncStorage } from 'react-native'
+import { AsyncStorage, Platform } from 'react-native'
 import { createStore, compose } from 'redux'
 import devTools from 'remote-redux-devtools'
 import { persistStore, autoRehydrate } from 'redux-persist'
@@ -9,7 +9,7 @@ export default (onComplete) => {
     // autoRehydrate(),
     devTools({
       host: 'localhost', port: 5678,
-      name: 'BinPick', realtime: true,
+      name: 'BinPick ' + Platform.OS, realtime: true,
     }),
   );
 

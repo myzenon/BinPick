@@ -1,53 +1,16 @@
 import React, { Component } from 'react'
-import { StatusBar, View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
+import { View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
 import { Container, Header, Body, Title, Left, Button, Icon, Right } from 'native-base'
 import styles from './styles'
 import locales from '../../locales'
 import { Actions } from 'react-native-router-flux'
-
-const categories = {
-    FOOD : {
-        name: {
-            th: 'อาหาร',
-            en: 'FOOD'
-        },
-        image: require('../../image/food.jpg')
-    },
-    PAPER : {
-        name: {
-            th: '',
-            en: 'PAPER'
-        },
-        image: require('../../image/food.jpg')
-    },
-    CLOTH : {
-        name: {
-            th: '',
-            en: 'CLOTH'
-        },
-        image: require('../../image/food.jpg')
-    },
-    MEDICINE : {
-        name: {
-            th: '',
-            en: 'MACHINE'
-        },
-        image: require('../../image/food.jpg')
-    },
-    ELECTRONIC : {
-        name: {
-            th: '',
-            en: 'ELECTRONIC'
-        },
-        image: require('../../image/food.jpg')
-    }
-}
+import categories from '../../data/trashes'
 
 const CategoryItem = (props) => (
     <TouchableOpacity style={styles.category} activeOpacity={0.7} onPress={() => Actions.trash({category: props.category})}>
         <Image style={styles.image} source={props.category.image}>
             <View style={styles.nameWrapper}>
-                <Text style={styles.name}>{locales.getTrashText(props.category.name)}</Text>
+                <Text style={styles.name}>{locales.getTrashText(props.category.name, {capitalize: true})}</Text>
             </View>
         </Image>
     </TouchableOpacity>
@@ -87,7 +50,7 @@ export default class Category extends Component {
                     </Body>
                     <Right />
                 </Header>
-                <StatusBar backgroundColor="#004D40" barStyle="light-content" />
+                {this.props.renderStatusBar(this.props.name)}
                 <ScrollView style={styles.contentWrapper}>
                     {this.renderCategories()}
                 </ScrollView>

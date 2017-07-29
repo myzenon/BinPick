@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, StatusBar, Image, ScrollView, Dimensions, TouchableOpacity } from 'react-native'
+import { View, Text, Image, ScrollView, Dimensions, TouchableOpacity } from 'react-native'
 import { Icon } from 'native-base'
 import SlideButton from '../Slider'
 import elevation from '../../utils/elevation'
@@ -8,8 +8,10 @@ import IconAwesome from 'react-native-vector-icons/FontAwesome'
 import bins from '../../data/bins'
 import locales from '../../locales'
 import { Actions } from 'react-native-router-flux'
+import { connect } from 'react-redux'
+import { updateSelectedBins } from '../../actions/selectedBins'
 
-export default class Main extends Component {
+class Main extends Component {
     constructor() {
         super()
         this.state = {
@@ -31,6 +33,10 @@ export default class Main extends Component {
         bins[binKey] = !bins[binKey]
         this.setState({bins})
     }
+    saveBins() {
+        this.props.saveBins(this.state.bins)
+        Actions.category()
+    }
     renderBinSlider() {
         const binKeys = Object.keys(this.state.bins)
         if (binKeys.filter((binKey) => !this.state.bins[binKey]).length === binKeys.length) {
@@ -39,7 +45,7 @@ export default class Main extends Component {
         return (
             <SlideButton
                 onSlideSuccess={() => {
-                    Actions.category()
+                    this.saveBins()
                 }}
                 successfulSlidePercent={40}
             >
@@ -61,10 +67,7 @@ export default class Main extends Component {
     render() {
         return (
             <ScrollView style={styles.wrapper} bounces={false}>
-                <StatusBar
-                    backgroundColor="transparent"
-                    barStyle="light-content"
-                    translucent={true}/>
+                {this.props.renderStatusBar(this.props.name)}
                 <View style={[styles.fixedWrapper, {height: this.windowHeight}]}>
                     <View style={styles.logoWrapper}>
                         <Image source={require('../../images/Logo.png')} style={styles.logoImage} />
@@ -115,3 +118,16 @@ export default class Main extends Component {
         )
     }
 }
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        saveBins: (bins) => {
+            dispatch(updateSelectedBins(bins))
+        }
+    }
+}
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(Main)
