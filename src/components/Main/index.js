@@ -1,12 +1,13 @@
-import React, {Component} from 'react'
-import {View, Text, StatusBar, Image,ScrollView,Dimensions, TouchableOpacity} from 'react-native'
-import {Container, Icon} from 'native-base'
+import React, { Component } from 'react'
+import { View, Text, StatusBar, Image, ScrollView, Dimensions, TouchableOpacity } from 'react-native'
+import { Icon } from 'native-base'
 import SlideButton from '../Slider'
 import elevation from '../../utils/elevation'
 import styles from './styles'
 import IconAwesome from 'react-native-vector-icons/FontAwesome'
 import bins from '../../data/bins'
 import locales from '../../locales'
+import { Actions } from 'react-native-router-flux'
 
 export default class Main extends Component {
     constructor() {
@@ -38,7 +39,7 @@ export default class Main extends Component {
         return (
             <SlideButton
                 onSlideSuccess={() => {
-                    alert('Yeew !!')
+                    Actions.category()
                 }}
                 successfulSlidePercent={40}
             >
@@ -100,10 +101,14 @@ export default class Main extends Component {
                             <View style={styles.sliderBinWrapper}>
                                 {this.renderBinSlider()}
                             </View>
-                        </View> 
+                        </View>
                     </View>
                     <View style={styles.statsWrapper}>
-                        <IconAwesome name="bar-chart-o" style={styles.statsIcon} />
+                        <TouchableOpacity
+                            onPress={() => Actions.statistic()}
+                        >
+                            <IconAwesome name="bar-chart-o" style={styles.statsIcon} />
+                        </TouchableOpacity>
                     </View>
                 </View>
             </ScrollView>

@@ -7,4 +7,8 @@ I18n.translations = {
   en,
   th
 }
+I18n.getTrashText = (textObj) => {
+  const myLocale = I18n.locale.split('-')[0]
+  return textObj[myLocale]
+}
 export default I18n

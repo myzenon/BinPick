@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { StatusBar, View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
 import { Container, Header, Body, Title, Left, Button, Icon, Right } from 'native-base'
 import styles from './styles'
+import { Actions } from 'react-native-router-flux'
 
 const category = {
     name: {
@@ -52,7 +53,7 @@ export default class Trash extends Component {
     renderProducts() {
         let arrProducts = []
 
-        for (let i = 0; i < category.products.length; i+=3) {
+        for (let i = 0; i < category.products.length; i += 3) {
             console.log(category.products[0].image)
             arrProducts.push(
                  <View style={styles.rowCategory} key={i}>
@@ -78,7 +79,7 @@ export default class Trash extends Component {
                                 <Text style={styles.name}> {category.products[i+2].name.en} </Text>
                             </View>
                         </Image>
-                    </TouchableOpacity> } 
+                    </TouchableOpacity> }
                 </View>
             )
         }
@@ -90,7 +91,10 @@ export default class Trash extends Component {
             <Container>
                  <Header style={styles.header}>
                     <Left>
-                        <Button transparent>
+                        <Button
+                            transparent
+                            onPress={() => Actions.pop()}
+                        >
                             <Icon ios="ios-arrow-back" android="md-arrow-back" style={styles.icon} />
                         </Button>
                     </Left>

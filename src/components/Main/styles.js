@@ -8,7 +8,6 @@ export default StyleSheet.create({
     },
     logoWrapper: {
         flex: 2,
-        // height: '25%',
         marginTop: 50,
         marginLeft: 30,
         marginRight: 30,
@@ -16,25 +15,21 @@ export default StyleSheet.create({
     },
     selectBinWrapper: {
         flex: 4,
-        // height: '50%',
         backgroundColor: '#FFF'
     },
     sliderWrapper: {
         flex: 2,
-        // height: '30%',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },
     statsWrapper: {
         flex: 1,
-        // height: '20%',
         alignItems: 'center',
     },
 
     logoImage: {
         flex: 1,
-        // height:'100%',
         width: '100%',
         resizeMode: 'contain'
     },
