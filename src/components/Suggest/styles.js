@@ -9,7 +9,9 @@ export default StyleSheet.create({
         height: 260
     },
     header: {
-        backgroundColor: 'rgba(0,0,0,0.5)'
+        backgroundColor: 'rgba(0,0,0,0.8)',
+        position: 'absolute',
+        zIndex: 1
     },
     cardWrapper: {
         margin: 16
@@ -34,8 +36,7 @@ export default StyleSheet.create({
     },
     binResult: {
         fontSize: 50,
-        fontWeight: 'bold',
-        color: '#FDD835'
+        fontWeight: 'bold'
     },
     binImageWrapper: {
         flex: 1,
@@ -113,12 +114,11 @@ export default StyleSheet.create({
     imageSuggestionWrapper: {
         flex: 1,
         flexDirection: 'row',
-        padding: 20,
-        paddingTop: 0
+        padding: 20
     },
     imageSuggestion: {
         flex: 1,
-        width: 100,
-        resizeMode: 'cover'
+        height: 200,
+        resizeMode: 'contain'
     }
 })

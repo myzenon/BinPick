@@ -43,9 +43,7 @@ export default StyleSheet.create({
     },
     binImageWrapper: {
         flex: 1,
-        // borderWidth: 1,
         position: 'relative'
-        // backgroundColor: 'red'
     },
     binImage: {
         flex: 1,

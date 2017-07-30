@@ -8,6 +8,7 @@ export default {
             en: 'Blue',
             th: 'สีฟ้า'
         },
+        hexColor: '#1E88E5',
         image: require('../images/bins/Blue.png')
     },
     compostable: {
@@ -19,6 +20,7 @@ export default {
             en: 'Green',
             th: 'สีเขียว'
         },
+        hexColor: '#388E3C',
         image: require('../images/bins/Green.png')
     },
     recycle: {
@@ -30,6 +32,7 @@ export default {
             en: 'Yellow',
             th: 'สีเหลือง'
         },
+        hexColor: '#FFCA28',
         image: require('../images/bins/Yellow.png')
     },
     hazardous: {
@@ -41,6 +44,7 @@ export default {
             en: 'Red',
             th: 'สีเเดง'
         },
+        hexColor: '#C62828',
         image: require('../images/bins/Red.png')
     }
 }

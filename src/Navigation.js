@@ -39,6 +39,14 @@ const renderStatusBar = (routeName) => {
                         translucent
                     />
                 )
+            case 'suggest' :
+                return (
+                    <StatusBar
+                        backgroundColor="#000"
+                        barStyle="light-content"
+                        translucent={false}
+                    />
+                )
             default :
                 return (
                     <StatusBar

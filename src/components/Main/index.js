@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Image, ScrollView, Dimensions, TouchableOpacity } from 'react-native'
 import { Icon } from 'native-base'
-import SlideButton from '../Slider'
+import SlideButton from './Slider'
 import elevation from '../../utils/elevation'
 import styles from './styles'
 import IconAwesome from 'react-native-vector-icons/FontAwesome'

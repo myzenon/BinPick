@@ -17,8 +17,7 @@ export default StyleSheet.create({
     },
     rowCategory: {
         height: 230,
-        flexDirection: 'row',
-        borderWidth: 1
+        flexDirection: 'row'
     },
     category: {
         flex: 1

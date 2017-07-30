@@ -8,7 +8,10 @@ export default class Header extends Component {
         return (
             <View style={[styles.header, this.props.style]}>
                 <View style={styles.leftButton}>
-                    <Button transparent>
+                    <Button
+                        onPress={this.props.onBack}
+                        transparent
+                    >
                         <Icon name="md-arrow-back" style={styles.icon} />
                     </Button>
                 </View>
