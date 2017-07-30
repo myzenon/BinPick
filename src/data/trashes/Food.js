@@ -44,6 +44,20 @@ export default Food = {
                 'recycle'
             ], 
             tips: [ ]
+        },   
+        {
+            name: {
+                en: 'meat',
+                th: 'เนื้อสัตว์'
+            },
+            image: require('../../images/trashes/food/product/meat/meat.jpg'),
+            bins: [
+                'compostable',
+                'general',
+                'hazardous',
+                'recycle'
+            ], 
+            tips: [ ]
         }
     ]
 }

@@ -1,12 +1,14 @@
 import Cloth from './Cloth'
 import Container from './Container'
-import ElectricDevice from './ElectricDevice'
+import ElectricDevice from './ElectronicDevice'
 import Food from './Food'
 import Paper from './Paper'
+import Chemacal from './Chemical'
 export default {
     Cloth,
     Container,
-    ElectricDevice,
+    ElectronicDevice,
     Food,
-    Paper
+    Paper,
+    Chemical
 }

@@ -46,19 +46,6 @@ export default Paper = {
             tips: [ ]
         },{
             name: {
-                en: 'book',
-                th: 'หนังสือ'
-            },
-            image: require('../../images/trashes/paper/product/book/book.jpg'),
-            bins: [
-                'recycle',
-                'general',
-                'compostable',
-                'hazardous'
-            ], 
-            tips: [ ]
-        },{
-            name: {
                 en: 'paper plate',
                 th: 'จานกระดาษ'
             },
@@ -104,6 +91,19 @@ export default Paper = {
                 'hazardous'
             ], 
              tips: [ ]
+        },{
+            name: {
+                en: 'book',
+                th: 'หนังสือ'
+            },
+            image: require('../../images/trashes/paper/product/book/book.jpg'),
+            bins: [
+                'recycle',
+                'general',
+                'compostable',
+                'hazardous'
+            ], 
+            tips: [ ]
         }
     ]
 }
