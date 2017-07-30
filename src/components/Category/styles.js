@@ -35,6 +35,7 @@ export default StyleSheet.create({
     },
     name: {
         color: '#FFF',
-        fontSize: 15
+        fontSize: 15,
+        textAlign: 'center'
     }
 })
