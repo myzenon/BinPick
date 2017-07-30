@@ -80,6 +80,7 @@ export default StyleSheet.create({
     },
     binSuggest: {
         flex: 5,
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -88,11 +89,10 @@ export default StyleSheet.create({
         color: '#757575'
     },
     binSuggestImageWrapper: {
-        flex: 1,
         flexDirection: 'row'
     },
     binSuggestImage: {
-        flex: 1,
+        width: 50,
         height: 50,
         resizeMode: 'contain'
     },
@@ -114,7 +114,9 @@ export default StyleSheet.create({
     imageSuggestionWrapper: {
         flex: 1,
         flexDirection: 'row',
-        padding: 20
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingBottom: 20
     },
     imageSuggestion: {
         flex: 1,
