@@ -6,6 +6,7 @@ import Main from './components/Main'
 import Trash from './components/Trash'
 import Category from './components/Category'
 import Statistic from './components/Statistic'
+import Suggest from './components/Suggest'
 
 
 class RouterWithRedux extends Component {
@@ -55,7 +56,8 @@ export default () => (
             <Scene key="main" component={Main} hideNavBar initial />
             <Scene key="category" component={Category} hideNavBar />
             <Scene key="trash" component={Trash} hideNavBar />
-            <Scene key="statistic" component={Statistic} direction="vertical" hideNavBar />
+            <Scene key="statistic" component={Statistic} hideNavBar />
+            <Scene key="suggest" component={Suggest} hideNavBar />
         </Scene>
     </RouterWithRedux>
 )
