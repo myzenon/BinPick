@@ -6,7 +6,7 @@ import reducer from './reducers'
 
 export default (onComplete) => {
   const enhancer = compose(
-    // autoRehydrate(),
+    autoRehydrate(),
     devTools({
       host: 'localhost', port: 5678,
       name: 'BinPick ' + Platform.OS, realtime: true,
@@ -14,7 +14,7 @@ export default (onComplete) => {
   );
 
   const store = createStore(reducer, undefined, enhancer)
-  persistStore(store, { storage: AsyncStorage }, onComplete)
+  persistStore(store, { storage: AsyncStorage, blacklist: 'selectedBins' }, onComplete)
 
   return store
 }

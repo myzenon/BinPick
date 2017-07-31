@@ -4,9 +4,11 @@ import { Container, Header, Body, Title, Left, Button, Icon, Right } from 'nativ
 import styles from './styles'
 import { Actions } from 'react-native-router-flux'
 import locales from '../../locales'
+import { connect } from 'react-redux'
+import { addBinLocalStats, addWasteLocalStats } from '../../actions/statistics'
 
 const TrashItem = (props) => (
-    <TouchableOpacity style={styles.category} activeOpacity={0.7} onPress={() => Actions.suggest({trash: props.trash})}>
+    <TouchableOpacity style={styles.category} activeOpacity={0.7} onPress={() => props.goToSuggestPage(props.trash)}>
         <Image style={styles.image} source={props.trash.image}>
             <View style={styles.nameWrapper}>
                 <Text style={styles.name}> {locales.getTrashText(props.trash.name, {capitalize: true})} </Text>
@@ -15,8 +17,15 @@ const TrashItem = (props) => (
     </TouchableOpacity>
 )
 
-export default class Trash extends Component {
-
+class Trash extends Component {
+    saveStats(trash) {
+        this.props.saveBinStats(trash.bins[0])
+        this.props.saveWasteStats(this.props.category.name.en)
+    }
+    goToSuggestPage(trash) {
+        this.saveStats(trash)
+        Actions.suggest({trash})
+    }
     renderProducts() {
         const category = this.props.category
         let arrProducts = []
@@ -25,9 +34,9 @@ export default class Trash extends Component {
 
             arrProducts.push(
                  <View style={styles.rowCategory} key={i}>
-                    <TrashItem trash={category.products[i]} />
-                    { i === category.products.length - 1 ? null : <TrashItem trash={category.products[i + 1]} /> }
-                    { i + 1 === category.products.length - 1 || i === category.products.length - 1 ? null : <TrashItem trash={category.products[i + 2]} /> }
+                    <TrashItem trash={category.products[i]} goToSuggestPage={this.goToSuggestPage.bind(this)} />
+                    { i === category.products.length - 1 ? null : <TrashItem trash={category.products[i + 1]} goToSuggestPage={this.goToSuggestPage.bind(this)} /> }
+                    { i + 1 === category.products.length - 1 || i === category.products.length - 1 ? null : <TrashItem trash={category.products[i + 2]} goToSuggestPage={this.goToSuggestPage.bind(this)} /> }
                 </View>
             )
         }
@@ -59,3 +68,11 @@ export default class Trash extends Component {
         )
     }
 }
+
+export default connect(
+    null,
+    {
+        saveBinStats: addBinLocalStats,
+        saveWasteStats: addWasteLocalStats
+    }
+)(Trash)

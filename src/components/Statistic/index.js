@@ -9,8 +9,13 @@ import { Actions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
 
 class Statistic extends Component {
+    componentWillMount() {
+        const bin_statistics = {...this.props.remote_bin_stats}
+        Object.keys(this.props.local_bin_stats).forEach((binKey) => bin_statistics[binKey] += this.props.local_bin_stats[binKey])
+        this.setState({bin_statistics})
+    }
     calculatePercentage(bin) {
-        const allTrash = Object.keys(this.props.bin_statistics).reduce((sum, binKey) => sum += parseInt(this.props.bin_statistics[binKey]), 0)
+        const allTrash = Object.keys(this.state.bin_statistics).reduce((sum, binKey) => sum += parseInt(this.state.bin_statistics[binKey]), 0)
         return (bin / allTrash) * 100
     }
 
@@ -37,7 +42,7 @@ class Statistic extends Component {
                         <View style={styles.binsWrapper}>
                             {
                                 Object.keys(bins).map((binKey) => {
-                                    const percentage = this.calculatePercentage(this.props.bin_statistics[binKey])
+                                    const percentage = this.calculatePercentage(this.state.bin_statistics[binKey])
                                     return (
                                         <View style={styles.bin} key={binKey}>
                                             <View style={styles.binImageWrapper}>
@@ -67,7 +72,8 @@ class Statistic extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        bin_statistics: state.statistics.bin_statistics
+        remote_bin_stats: state.remote_statistics.bin_statistics,
+        local_bin_stats: state.local_statistics.bin_statistics
     }
 }
 

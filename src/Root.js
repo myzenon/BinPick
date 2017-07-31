@@ -5,9 +5,6 @@ import { Spinner } from 'native-base'
 import Store from './Store'
 import Navigation from './Navigation'
 
-import getStats from './api/getStats'
-import { updateStats } from './actions/statistics'
-
 class Root extends Component {
     state = {
         isLoading: true,
@@ -15,10 +12,6 @@ class Root extends Component {
     }
     onStoreReady() {
         this.setState({ isLoading: false })
-        getStats()
-            .then((stats) => {
-                this.state.store.dispatch(updateStats(stats))
-            })
     }
     render () {
         if (this.state.isLoading) {
