@@ -32,7 +32,7 @@ export default Container = {
                 en: 'can',
                 th: 'กระป๋อง'
             },
-            image: require('../../images/trashes/container/product/can/can.png'),
+            image: require('../../images/trashes/container/product/can/can.jpg'),
             bins: [
                 'recycle',
                 'general',
@@ -118,7 +118,7 @@ export default Container = {
                 en: 'plastic container',
                 th: 'บรรจุภัณฑ์พลาสติก'
             },
-            image: require('../../images/trashes/container/product/plasticContainer/plasticContainer.png'),
+            image: require('../../images/trashes/container/product/plasticContainer/plasticContainer.jpg'),
             bins: [
                 'recycle',
                 'general',
@@ -131,7 +131,7 @@ export default Container = {
                         en: 'The plastic container should be empty.',
                         th: 'บรรจุภัณฑ์ที่จะทิ้งควรเป็นบรรจุภัณฑ์ที่ว่างเปล่า'
                     },
-                    image: require('../../images/trashes/container/product/plasticContainer/tip/1/emptyContainer.png')
+                    image: require('../../images/trashes/container/product/plasticContainer/tip/1/emptyContainer.jpg')
                 }
              ]
         },
