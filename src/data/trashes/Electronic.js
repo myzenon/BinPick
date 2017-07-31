@@ -54,7 +54,7 @@ export default Electronic = {
                 en: 'wire',
                 th: 'สายไฟ'
             },
-            image: require('../../images/trashes/electronic/product/wire/wire.png'),
+            image: require('../../images/trashes/electronic/product/wire/wire.jpg'),
             bins: [
                 'hazardous',
                 'general',
@@ -110,7 +110,7 @@ export default Electronic = {
                 en: 'small device',
                 th: 'อุปกรณ์ขนาดเล็ก'
             },
-            image: require('../../images/trashes/electronic/product/smallDevice/smallDevice.png'),
+            image: require('../../images/trashes/electronic/product/smallDevice/smallDevice.jpg'),
             bins: [
                 'hazardous',
                 'general',
