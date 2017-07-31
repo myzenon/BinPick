@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 import selectedBins from './selectedBins'
-import statistics from './statistics'
+import local_statistics from './local_statistics'
+import remote_statistics from './remote_statistics'
 
 export default combineReducers({
     selectedBins,
-    statistics
+    local_statistics,
+    remote_statistics
 })

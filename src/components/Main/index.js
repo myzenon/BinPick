@@ -10,6 +10,9 @@ import locales from '../../locales'
 import { Actions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
 import { updateSelectedBins } from '../../actions/selectedBins'
+import { updateRemoteStats, resetLocalStats } from '../../actions/statistics'
+import addStats from '../../api/addStats'
+import getStats from '../../api/getStats'
 
 class Main extends Component {
     constructor() {
@@ -27,6 +30,22 @@ class Main extends Component {
     }
     componentWillMount() {
         this.setWindowHeight()
+        this.sendStatsData()
+    }
+    getStatsData() {
+        getStats().then((stats) => {
+            this.props.updateRemoteStats(stats)
+        })
+    }
+    sendStatsData() {
+        addStats(this.props.local_statistics.bin_statistics, this.props.local_statistics.waste_statistics).then(() => {
+            this.getStatsData()
+            this.props.resetLocalStats()
+        })
+    }
+    goToStatsPage() {
+        this.sendStatsData()
+        Actions.statistic()
     }
     toggleBin(binKey) {
         const bins = {...this.state.bins}
@@ -108,7 +127,7 @@ class Main extends Component {
                     </View>
                     <View style={styles.statsWrapper}>
                         <TouchableOpacity
-                            onPress={() => Actions.statistic()}
+                            onPress={() => this.goToStatsPage()}
                         >
                             <IconAwesome name="bar-chart-o" style={styles.statsIcon} />
                         </TouchableOpacity>
@@ -119,15 +138,15 @@ class Main extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        saveBins: (bins) => {
-            dispatch(updateSelectedBins(bins))
-        }
-    }
-}
+const mapStateToProps = (state) => ({
+    local_statistics: state.local_statistics
+})
 
 export default connect(
-    null,
-    mapDispatchToProps
+    mapStateToProps,
+    { 
+        saveBins: updateSelectedBins,
+        resetLocalStats,
+        updateRemoteStats
+    }
 )(Main)

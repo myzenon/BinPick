@@ -1,8 +1,8 @@
-import { UPDATE_WASTE_STATS } from '../actions/statistics'
+import { UPDATE_REMOTE_STATS } from '../../actions/statistics'
 
 export default (state = {}, action) => {
     switch (action.type) {
-        case UPDATE_WASTE_STATS:
+        case UPDATE_REMOTE_STATS:
             return action.waste_statistics
         default:
             return state
