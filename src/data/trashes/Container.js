@@ -46,7 +46,7 @@ export default Container = {
                 en: 'foil tray',
                 th: 'ถาดฟอยล์'
             },
-            image: null,
+            image: require('../../images/trashes/container/product/foilTray/foilTray.jpg'),
             bins: [
                 'recycle',
                 'general',
@@ -118,7 +118,7 @@ export default Container = {
                 en: 'plastic container',
                 th: 'บรรจุภัณฑ์พลาสติก'
             },
-            image: null,
+            image: require('../../images/trashes/container/product/plasticContainer/plasticContainer.png'),
             bins: [
                 'recycle',
                 'general',
@@ -131,7 +131,7 @@ export default Container = {
                         en: 'The plastic container should be empty.',
                         th: 'บรรจุภัณฑ์ที่จะทิ้งควรเป็นบรรจุภัณฑ์ที่ว่างเปล่า'
                     },
-                    image: require('../../images/trashes/container/product/plasticContainer/tip/1/emptyContainer.jpg')
+                    image: require('../../images/trashes/container/product/plasticContainer/tip/1/emptyContainer.png')
                 }
              ]
         },
