@@ -60,6 +60,20 @@ export default HouseholdYard = {
                 'recycle'
             ], 
             tips: [ ]
+        },
+        {
+            name: {
+                en: 'twigs',
+                th: 'กิ่งไม้'
+            },
+            image: require('../../images/trashes/householdYard/product/twigs/twigs.jpg'),
+            bins: [
+                'compostable',
+                'general',
+                'hazardous',
+                'recycle'
+            ], 
+            tips: [ ]
         }
     ]
 }
