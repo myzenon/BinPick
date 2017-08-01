@@ -88,6 +88,34 @@ export default Chemical = {
                 'compostable'
             ], 
             tips: []
+        },
+        {
+            name: {
+                en: 'thinner',
+                th: 'ทินเนอร์'
+            },
+            image: require('../../images/trashes/chemical/product/thinner/thinner.jpg'),
+            bins: [
+                'hazardous',
+                'general',
+                'recycle',
+                'compostable'
+            ], 
+            tips: []
+        },
+        {
+            name: {
+                en: 'oil',
+                th: 'น้ำมัน'
+            },
+            image: require('../../images/trashes/chemical/product/oil/oil.jpg'),
+            bins: [
+                'hazardous',
+                'general',
+                'recycle',
+                'compostable'
+            ], 
+            tips: []
         }
     ]
 }
