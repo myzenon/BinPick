@@ -10,6 +10,10 @@ export default {
         },
         hexColor: '#1E88E5',
         image: require('../images/bins/Blue.png'),
+        image2: {
+            open: require('../image/bins/open-close/blue-open.png'),
+            close: require('../image/bins/open-close/blue-close.png')
+        },
         description: {
             en: 'The general waste bin is for any waste that you cannot put into your recycle, conpostable or Hazardous bins.',
             th: 'ถังขยะทั่วไปเป็นถังสำหรับทิ้งขยะที่ไม่สามารถทิ้งลงในถังขยะรีไซเคิล ขยะเปียก หรือขยะอันตรายได้'
@@ -72,6 +76,10 @@ export default {
         },
         hexColor: '#388E3C',
         image: require('../images/bins/Green.png'),
+        image2: {
+            open: require('../image/bins/open-close/green-open.png'),
+            close: require('../image/bins/open-close/green-close.png')
+        },
         description: {
             en: 'The compostable bin used to contain biodegradable waste or compostable materials as a means to divert waste from landfills.',
             th: 'ถังขยะเปียกเป็นถังสำหรับทิ้งขยะที่สามารถย่อยสลายได้ตามธรรมชาติเพื่อเป็นการแยกเพื่อลดจำนวนขยะที่ต้องนำไปฝังกลบ'
@@ -110,6 +118,10 @@ export default {
         },
         hexColor: '#FFCA28',
         image: require('../images/bins/Yellow.png'),
+        image2: {
+            open: require('../image/bins/open-close/yellow-open.png'),
+            close: require('../image/bins/open-close/yellow-close.png')
+        },
         description: {
             en: 'Recycle bin contains the recyclable wastes. Recycling reduces the volume of waste sent to landfill and plays an important part in preserving the quality of the environment.',
             th: 'ถังขยะรีไซเคิลเป็นถังสำหรับทิ้งขยะรีไซเคิล การรีไซเคิลช่วยลดจำนวนขยะที่ต้องนำไปฝังกลบและเป็นส่วนสำคัญของการอนุรักษ์สิ่งแวดล้อม'
@@ -164,6 +176,10 @@ export default {
         },
         hexColor: '#C62828',
         image: require('../images/bins/Red.png'),
+        image2: {
+            open: require('../image/bins/open-close/red-open.png'),
+            close: require('../image/bins/open-close/red-close.png')
+        },
         description: {
             en: 'The hazardous bin contains any material that cannot be used further or is unwanted, and poses a risk to the community or to the environment if not properly handled.',
             th: 'ถังขยะอันตรายเป็นถังสำหรับทิ้งขยะที่ไม่สามารถนำไปใช้ต่อได้หรือไม่เป็นที่ต้องการและยังอาจจะทำให้เกิดอันตรายต่อสังคมหรือสิ่งแวดล้อมหากไม่ได้รับการจัดการที่เหมาะสม'
