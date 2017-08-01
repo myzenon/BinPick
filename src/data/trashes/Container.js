@@ -118,11 +118,7 @@ export default Container = {
                 en: 'plastic container',
                 th: 'บรรจุภัณฑ์พลาสติก'
             },
-<<<<<<< HEAD
             image: require('../../images/trashes/container/product/plasticContainer/plasticContainer.png'),
-=======
-            image: null,
->>>>>>> BinPick
             bins: [
                 'recycle',
                 'general',
