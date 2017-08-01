@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
-import { Container, Header, Body, Title, Left, Button, Icon, Right } from 'native-base'
+import { Container } from 'native-base'
 import styles from './styles'
 import { Actions } from 'react-native-router-flux'
 import locales from '../../locales'
 import { connect } from 'react-redux'
 import { addBinLocalStats, addWasteLocalStats } from '../../actions/statistics'
+import Header from '../Header'
 
 const TrashItem = (props) => (
     <TouchableOpacity style={styles.category} activeOpacity={0.7} onPress={() => props.goToSuggestPage(props.trash)}>
@@ -46,20 +47,7 @@ class Trash extends Component {
     render() {
         return (
             <Container>
-                 <Header style={styles.header}>
-                    <Left>
-                        <Button
-                            transparent
-                            onPress={() => Actions.pop()}
-                        >
-                            <Icon ios="ios-arrow-back" android="md-arrow-back" style={styles.icon} />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title style={styles.title}>{locales.getTrashText(this.props.category.name, {capitalize: true})}</Title>
-                    </Body>
-                    <Right />
-                </Header>
+                <Header style={styles.header} title={locales.getTrashText(this.props.category.name, {capitalize: true})} onBack={() => Actions.pop()} />
                 {this.props.renderStatusBar(this.props.name)}
                 <ScrollView style={styles.contentWrapper}>
                     {this.renderProducts()}

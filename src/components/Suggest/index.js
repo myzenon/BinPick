@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
-import Header from './Header'
+import Header from '../Header'
 import elevation from '../../utils/elevation'
 import locales from '../../locales'
 import bins from '../../data/bins'

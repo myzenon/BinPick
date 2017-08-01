@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { View, Image, ScrollView } from 'react-native'
-import { Container, Header, Left, Button, Icon, Body, Right, Title, Text } from 'native-base'
+import { View, Image, ScrollView, Text } from 'react-native'
+import { Container } from 'native-base'
 import styles from './styles'
 import locales from '../../locales'
 import bins from '../../data/bins'
 import elevation from '../../utils/elevation'
 import { Actions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
+import Header from '../Header'
 
 class Statistics extends Component {
     componentWillMount() {
@@ -24,20 +25,7 @@ class Statistics extends Component {
     render() {
         return (
             <Container>
-                 <Header style={styles.header}>
-                    <Left>
-                        <Button
-                            transparent
-                            onPress={() => Actions.pop()}
-                        >
-                            <Icon ios="ios-arrow-back" android="md-arrow-back" style={styles.icon} />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title style={styles.title}>{locales.t('statistic')}</Title>
-                    </Body>
-                    <Right />
-                </Header>
+                <Header style={styles.header} title={locales.t('statistic')} onBack={() => Actions.pop()} />
                 {this.props.renderStatusBar(this.props.name)}
                 <ScrollView>
                     <View style={[styles.cardWrapper, elevation(10)]}>

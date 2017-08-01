@@ -3,28 +3,25 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     header: {
         flexDirection: 'row',
-        paddingTop: 15,
-        paddingHorizontal: 10,
         justifyContent: 'center',
         top: 0,
 		left: 0,
         right: 0,
-        height: 64
+        height: 56
     },
     leftButton: {
-        flex: 1,
         alignSelf: 'center',
-        alignItems: 'flex-start',
-        marginLeft: -10,
+        alignItems: 'flex-start'
     },
     icon: {
         fontSize: 25,
-        color: '#FFF'
+        color: '#FFF',
     },
     titleWrapper: {
         flex: 1,
-        alignItems: 'center',
-        alignSelf: 'center'
+        alignItems: 'flex-start',
+        alignSelf: 'center',
+        marginLeft: 10
     },
     title: {
         color: '#FFF',

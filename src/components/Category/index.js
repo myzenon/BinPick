@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
-import { Container, Header, Body, Title, Left, Button, Icon, Right } from 'native-base'
+import { Container } from 'native-base'
 import styles from './styles'
 import locales from '../../locales'
 import { Actions } from 'react-native-router-flux'
 import categories from '../../data/trashes'
+import Header from '../Header'
 
 const CategoryItem = (props) => (
     <TouchableOpacity style={styles.category} activeOpacity={0.7} onPress={() => Actions.trash({category: props.category})}>
@@ -36,20 +37,7 @@ export default class Category extends Component {
     render() {
         return (
             <Container>
-                 <Header style={styles.header}>
-                    <Left>
-                        <Button
-                            transparent
-                            onPress={() => Actions.pop()}
-                        >
-                            <Icon ios="ios-arrow-back" android="md-arrow-back" style={styles.icon} />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title style={styles.title}>{locales.t('category')}</Title>
-                    </Body>
-                    <Right />
-                </Header>
+                <Header style={styles.header} title={locales.t('category')} onBack={() => Actions.pop()} />
                 {this.props.renderStatusBar(this.props.name)}
                 <ScrollView style={styles.contentWrapper}>
                     {this.renderCategories()}
