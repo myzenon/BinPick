@@ -1,6 +1,7 @@
 export default {
     binSuggest: 'เลือกถังขยะของคุณ',
     binSlide: 'เลื่อน',
+    binSlideNoSelected: 'กรุณาเลือกถังขยะ',
     category: 'หมวดหมู่ขยะ',
     statistic: 'สถิติ',
     binResult: 'ถังที่ต้องทิ้งคือ',

@@ -56,6 +56,15 @@ class Main extends Component {
         this.props.saveBins(this.state.bins)
         Actions.category()
     }
+    isBinSelected() {
+        let isBinSelected = false
+        Object.keys(this.state.bins).forEach((binKey) => {
+            if (!isBinSelected) {
+                isBinSelected = this.state.bins[binKey]
+            }
+        })
+        return isBinSelected
+    }
     renderBinSlider() {
         const binKeys = Object.keys(this.state.bins)
         if (binKeys.filter((binKey) => !this.state.bins[binKey]).length === binKeys.length) {
@@ -117,7 +126,7 @@ class Main extends Component {
                         <View style={styles.sliderFrame}>
                             <View style={styles.sliderSpace} />
                             <Text style={styles.sliderText}>
-                                {locales.t('binSlide')}&nbsp;&nbsp;&nbsp;&nbsp;
+                                {this.isBinSelected() ? locales.t('binSlide') : locales.t('binSlideNoSelected')}&nbsp;&nbsp;&nbsp;&nbsp;
                             </Text>
                             <Icon name="arrow-forward" style={styles.sliderIcon}/>
                             <View style={styles.sliderBinWrapper}>

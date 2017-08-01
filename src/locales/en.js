@@ -1,6 +1,7 @@
 export default {
     binSuggest: 'SELECT YOUR BINS',
     binSlide: 'SLIDE',
+    binSlideNoSelected: 'PLEASE SELECT YOUR BINS',
     category: 'Waste Categories',
     statistic: 'Statistics',
     binResult: 'Your bin is',
