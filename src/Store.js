@@ -7,10 +7,11 @@ import reducer from './reducers'
 export default (onComplete) => {
   const enhancer = compose(
     autoRehydrate(),
-    devTools({
-      host: 'localhost', port: 5678,
-      name: 'BinPick ' + Platform.OS, realtime: true,
-    }),
+    // For Developer
+    // devTools({
+    //   host: 'localhost', port: 5678,
+    //   name: 'BinPick ' + Platform.OS, realtime: true,
+    // }),
   );
 
   const store = createStore(reducer, undefined, enhancer)

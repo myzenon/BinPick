@@ -94,7 +94,7 @@ export default class BinDetails extends Component {
                                                     <Text style={styles.trashIndex}>{index + 1}</Text>
                                                 </View>
                                                 <View style={styles.trashNameWrapper}>
-                                                    <Text style={styles.trashName}>{locales.getTrashText(bins[binSelected].trashList[index])}</Text>
+                                                    <Text style={styles.trashName}>{locales.getTrashText(bins[binSelected].trashList[index], {capitalize: true})}</Text>
                                                 </View>
                                             </View>
                                         )

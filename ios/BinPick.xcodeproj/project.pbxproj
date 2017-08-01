@@ -43,6 +43,7 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		762CCF8D7A524A308B2D67C6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13125513C4AC438AA02F421E /* SimpleLineIcons.ttf */; };
 		778520BC8883431895865F45 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F4958BB5CB1C4CB997EDE736 /* Entypo.ttf */; };
+		7A2755821F310B6900A6C1AC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A2755811F310B6900A6C1AC /* logo.png */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		83B8C473170D41F5AFD59E46 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C693C92409F34EFCB8CBB8F5 /* Ionicons.ttf */; };
 		955F60C078444C58B96A0097 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C64FC9E09C74D46BF88CFDD /* libRNVectorIcons.a */; };
@@ -341,6 +342,7 @@
 		704FF63510B8441C9643D77A /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		76F60DD081F94BA1BB100F1A /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		7A2755811F310B6900A6C1AC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		827D5C47036846C886B644A8 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8716D1D49466485FB9DEB6CC /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 		13B07FAE1A68108700A75B9A /* BinPick */ = {
 			isa = PBXGroup;
 			children = (
+				7A2755811F310B6900A6C1AC /* logo.png */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -724,6 +727,9 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 6568M2VZES;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1066,6 +1072,7 @@
 				CAEA6079A86C46B2B2EAE191 /* EvilIcons.ttf in Resources */,
 				E05D48483AA94894AD203519 /* FontAwesome.ttf in Resources */,
 				0695F015FFDF4F33BE68C596 /* Foundation.ttf in Resources */,
+				7A2755821F310B6900A6C1AC /* logo.png in Resources */,
 				83B8C473170D41F5AFD59E46 /* Ionicons.ttf in Resources */,
 				A8A3398CB8294C5C9B4A3044 /* MaterialIcons.ttf in Resources */,
 				310FFB0DD4C446379F2CA518 /* Octicons.ttf in Resources */,
@@ -1251,6 +1258,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = 6568M2VZES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1263,6 +1271,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.ac.cmu.camt.binpick;
 				PRODUCT_NAME = BinPick;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1274,6 +1283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6568M2VZES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
@@ -1286,6 +1296,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = th.ac.cmu.camt.binpick;
 				PRODUCT_NAME = BinPick;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

@@ -82,8 +82,7 @@ export default StyleSheet.create({
         height: 60,
         borderRadius: 5,
         backgroundColor: '#011C17',
-        alignItems: 'center',
-        // justifyContent: 'center'
+        alignItems: 'center'
     },
     sliderSpace: {
         flex: 1
