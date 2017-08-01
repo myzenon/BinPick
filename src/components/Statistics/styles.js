@@ -47,9 +47,18 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'flex-end'
     },
+    binLabelLeft: {
+        flexDirection: 'row',
+        alignItems: 'flex-end'
+    },
     binName: {
         fontSize: 16,
         color: '#757575'
+    },
+    binAmount: {
+        fontSize: 14,
+        color: '#BBB',
+        marginLeft: 7
     },
     statWrapper: {
         flex: 1,

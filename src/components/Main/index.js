@@ -45,7 +45,7 @@ class Main extends Component {
     }
     goToStatsPage() {
         this.sendStatsData()
-        Actions.statistic()
+        Actions.statistics()
     }
     toggleBin(binKey) {
         const bins = {...this.state.bins}

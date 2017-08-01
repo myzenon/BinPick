@@ -5,7 +5,7 @@ import { Router, Reducer, Scene } from 'react-native-router-flux'
 import Main from './components/Main'
 import Trash from './components/Trash'
 import Category from './components/Category'
-import Statistic from './components/Statistic'
+import Statistics from './components/Statistics'
 import Suggest from './components/Suggest'
 
 
@@ -64,7 +64,7 @@ export default () => (
             <Scene key="main" component={Main} hideNavBar initial />
             <Scene key="category" component={Category} hideNavBar />
             <Scene key="trash" component={Trash} hideNavBar />
-            <Scene key="statistic" component={Statistic} hideNavBar />
+            <Scene key="statistics" component={Statistics} hideNavBar />
             <Scene key="suggest" component={Suggest} hideNavBar />
         </Scene>
     </RouterWithRedux>

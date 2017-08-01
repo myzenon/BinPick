@@ -8,7 +8,7 @@ import elevation from '../../utils/elevation'
 import { Actions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
 
-class Statistic extends Component {
+class Statistics extends Component {
     componentWillMount() {
         const bin_statistics = {...this.props.remote_bin_stats}
         Object.keys(this.props.local_bin_stats).forEach((binKey) => bin_statistics[binKey] += this.props.local_bin_stats[binKey])
@@ -18,7 +18,9 @@ class Statistic extends Component {
         const allTrash = Object.keys(this.state.bin_statistics).reduce((sum, binKey) => sum += parseInt(this.state.bin_statistics[binKey]), 0)
         return (bin / allTrash) * 100
     }
-
+    getBinAmount(bin) {
+        return (this.props.remote_bin_stats[bin] + this.props.local_bin_stats[bin]).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+    }
     render() {
         return (
             <Container>
@@ -50,7 +52,10 @@ class Statistic extends Component {
                                             </View>
                                             <View style={styles.binDetail}>
                                                 <View style={styles.binLabel}>
-                                                    <Text style={styles.binName}>{locales.getTrashText(bins[binKey].name)}</Text>
+                                                    <View style={styles.binLabelLeft}>
+                                                        <Text style={styles.binName}>{locales.getTrashText(bins[binKey].name)}</Text>
+                                                        <Text style={styles.binAmount}>({this.getBinAmount(binKey)})</Text>
+                                                    </View>
                                                     <Text style={styles.binPercent}>{percentage.toFixed(1) + '%'}</Text>
                                                 </View>
                                                 <View style={styles.statWrapper}>
@@ -79,4 +84,4 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(
     mapStateToProps
-)(Statistic)
+)(Statistics)
