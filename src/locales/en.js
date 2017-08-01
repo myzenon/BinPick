@@ -7,5 +7,7 @@ export default {
     newTrashButton: 'SELECT NEW WASTE CATEGORY',
     tip: 'Tips',
     binTip: 'This trash should be in the',
-    lastWordColorBin: 'bin'
+    lastWordColorBin: 'bin',
+    binDetails: 'Bin Information',
+    Description: 'Description'
 }
