@@ -45,14 +45,14 @@ class Suggest extends Component {
                                 <View style={styles.tipTitleWrapper}>
                                     <Text style={styles.tipTitle}>{locales.t('tip')}</Text>
                                 </View>
-                                <TouchableOpacity style={styles.binSuggestWrapper}>
+                                <View style={styles.binSuggestWrapper}>
                                     <View style={styles.binSuggest}>
                                         <Text style={styles.binSuggestName}>{locales.t('binTip')} {locales.getTrashText(bins[this.props.trash.bins[0]].color)} {locales.t('lastWordColorBin')}</Text>
                                         <TouchableOpacity style={styles.binSuggestImageWrapper} onPress={() => Actions.binDetails({binKey: this.props.trash.bins[0]})}>
                                             <Image style={styles.binSuggestImage} source={bins[this.props.trash.bins[0]].image} />
                                         </TouchableOpacity>
                                     </View>
-                                </TouchableOpacity>
+                                </View>
                                 {
                                     this.props.trash.tips.map((tip, index) => {
                                         return (
