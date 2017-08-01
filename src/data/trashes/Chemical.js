@@ -60,6 +60,34 @@ export default Chemical = {
                 'compostable'
             ], 
             tips: []
+        },
+        {
+            name: {
+                en: 'shampoo',
+                th: 'แชมพู'
+            },
+            image: require('../../images/trashes/chemical/product/shampoo/shampoo.jpg'),
+            bins: [
+                'hazardous',
+                'general',
+                'recycle',
+                'compostable'
+            ], 
+            tips: []
+        },
+        {
+            name: {
+                en: 'soap',
+                th: 'สบู่'
+            },
+            image: require('../../images/trashes/chemical/product/soap/soap.jpg'),
+            bins: [
+                'hazardous',
+                'general',
+                'recycle',
+                'compostable'
+            ], 
+            tips: []
         }
     ]
 }

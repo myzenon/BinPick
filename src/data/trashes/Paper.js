@@ -36,7 +36,7 @@ export default Paper = {
                 en: 'flyer',
                 th: 'ใบปลิว'
             },
-            image: require('../../images/trashes/paper/product/flyer/flyer.png'),
+            image: require('../../images/trashes/paper/product/flyer/flyer.jpg'),
             bins: [
                 'recycle',
                 'general',
@@ -62,7 +62,7 @@ export default Paper = {
                         en: 'Food scrap should be seperated to the green bin.',
                         th: 'เศษอาหารควรแยกทิ้งในถังสีเขียว'
                     },
-                    image: require('../../images/trashes/paper/product/paperPlate/tip/1/greenBin.png')
+                    image: require('../../images/trashes/paper/product/paperPlate/tip/1/greenBin.jpg')
                 }
             ]
         },{
@@ -83,7 +83,7 @@ export default Paper = {
                 en: 'detergent box',
                 th: 'กล่องผงซักฟอก'
             },
-            image: require('../../images/trashes/paper/product/detergentBox/detergentBox.png'),
+            image: require('../../images/trashes/paper/product/detergentBox/detergentBox.jpg'),
             bins: [
                 'compostable',
                 'general',

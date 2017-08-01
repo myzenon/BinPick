@@ -32,6 +32,34 @@ export default Cloth = {
                 'hazardous'
             ], 
             tips: [ ]
+        },
+        {
+            name: {
+                en: 'socks',
+                th: 'ถุงเท้า'
+            },
+            image: require('../../images/trashes/cloth/product/socks/socks.jpg'),
+            bins: [
+                'general',
+                'compostable',
+                'recycle',
+                'hazardous'
+            ], 
+            tips: [ ]
+        },
+        {
+            name: {
+                en: 'bag',
+                th: 'กระเป๋า'
+            },
+            image: require('../../images/trashes/cloth/product/bag/bag.jpg'),
+            bins: [
+                'general',
+                'compostable',
+                'recycle',
+                'hazardous'
+            ], 
+            tips: [ ]
         }
     ]
 }
