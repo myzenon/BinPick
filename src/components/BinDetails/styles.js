@@ -5,31 +5,45 @@ export default StyleSheet.create({
         backgroundColor: '#00695C'
     },
     binsWrapper: {
+        paddingLeft: 10,
+        paddingRight: 10
     },
     binsImageWrapper: {
         flexDirection: 'row'
     },
     imageWrapper: {
         flex: 1,
-        flexDirection: 'row',
-        backgroundColor: 'red',
-        borderWidth: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+        flexDirection: 'row'
     },
     binImage: {
         flex: 1,
-        height: 75,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+        height: 150
     },
     cardWrapper: {
         flex: 1,
-        margin: 16
+        margin: 16,
+        marginTop: 0
     },
     descriptionCard: {
         flex: 1,
+        flexDirection: 'row',
         padding: 20,
+        paddingLeft: 0,
         backgroundColor: '#FFF'
+    },
+    imageDescriptionWrapper: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    imageDescription: {
+        flex: 1,
+        height: 100,
+        resizeMode: 'contain'
+    },
+    binDescriptionWrapper: {
+        flex: 2
     },
     binDescriptionTitleWrapper: {
         paddingBottom: 10
@@ -39,7 +53,7 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color: '#616161'
     },
-    binDescription: {
+    description: {
         fontSize: 14,
         color: '#424242'
     },
@@ -58,30 +72,29 @@ export default StyleSheet.create({
         color: '#616161'
     },
     listTrashWrapper: {
-        // backgroundColor: 'orange'
     },
     trashWrapper: {
-        height: 40,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        borderWidth: 3,
+        borderColor: '#FFF'
     },
     trashIndexWrapper: {
-        // flex: 1,
-        paddingLeft: 30,
-        paddingRight: 30,
+        width: 60,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'pink'
+        backgroundColor: '#F0F0F0',
+        paddingTop: 5,
+        paddingBottom: 5
     },
     trashIndex: {
-        fontSize: 18
+        fontSize: 15
     },
     trashNameWrapper: {
         flex: 3,
         paddingLeft: 15,
-        justifyContent: 'center',
-        // backgroundColor: 'yellow'
+        justifyContent: 'center' 
     },
     trashName: {
-        fontSize: 18
+        fontSize: 15
     }
 })

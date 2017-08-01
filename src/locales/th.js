@@ -10,5 +10,6 @@ export default {
     binTip: 'ถังที่ควรทิ้งคือถัง',
     lastWordColorBin: '',
     binDetails: 'ข้อมูลถังขยะ',
-    Description: 'รายละเอียด'
+    Description: 'รายละเอียด',
+    listTrash: 'รายชื่อขยะที่ควรทิ้งในถังนี้'
 }
