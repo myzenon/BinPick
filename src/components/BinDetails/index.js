@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { View, Image, ScrollView, Text } from 'react-native'
 import {} from 'native-base'
 import styles from './styles'
-import Header from '../Suggest/Header'
+import Header from '../Header'
 import elevation from '../../utils/elevation'
 import locales from '../../locales'
+import bins from '../../data/bins'
 
 export default class BinDetails extends Component {
     render() {
@@ -13,18 +14,16 @@ export default class BinDetails extends Component {
                 <Header style={styles.header} title={locales.t('binDetails')} />
                 <View style={styles.binsWrapper}>
                     <View style={styles.binsImageWrapper}>
-                        <View style={styles.imageWrapper}>
-                            <Image style={styles.binImage} source={require('../../images/bins/Blue.png')} />
-                        </View>
-                        <View style={styles.imageWrapper}>
-                            <Image style={styles.binImage} />
-                        </View>
-                        <View style={styles.imageWrapper}>
-                            <Image style={styles.binImage} />
-                        </View>
-                        <View style={styles.imageWrapper}>
-                            <Image style={styles.binImage} />
-                        </View>
+                        {
+                            Object.keys(bins).map((bin) => {
+                                console.log(bin)
+                                return (
+                                    <View style={styles.imageWrapper}>
+                                        <Image style={styles.binImage} source={bin.image2.open} />
+                                    </View>
+                                )
+                            })
+                        }
                     </View>
                     <View style={styles.cardWrapper}>
                         <View style={[styles.descriptionCard, elevation(10)]}>
