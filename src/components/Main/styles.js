@@ -25,7 +25,8 @@ export default StyleSheet.create({
     },
     statsWrapper: {
         flex: 1,
-        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'row'
     },
 
     logoImage: {
@@ -125,6 +126,8 @@ export default StyleSheet.create({
 
     statsIcon: {
         fontSize: 25,
-        color: '#FFF'
+        color: '#FFF',
+        marginLeft: 5,
+        marginRight: 5
     }
 })

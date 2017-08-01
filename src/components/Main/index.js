@@ -140,6 +140,11 @@ class Main extends Component {
                         >
                             <IconAwesome name="bar-chart-o" style={styles.statsIcon} />
                         </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => Actions.binDetails()}
+                        >
+                            <IconAwesome name="trash-o" style={styles.statsIcon} />
+                        </TouchableOpacity>
                     </View>
                 </View>
             </ScrollView>

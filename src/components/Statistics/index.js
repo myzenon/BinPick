@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Image, ScrollView, Text } from 'react-native'
+import { View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
 import { Container } from 'native-base'
 import styles from './styles'
 import locales from '../../locales'
@@ -35,9 +35,9 @@ class Statistics extends Component {
                                     const percentage = this.calculatePercentage(this.state.bin_statistics[binKey])
                                     return (
                                         <View style={styles.bin} key={binKey}>
-                                            <View style={styles.binImageWrapper}>
+                                            <TouchableOpacity style={styles.binImageWrapper} onPress={() => Actions.binDetails({binKey})}>
                                                 <Image style={styles.binImage} source={bins[binKey].image} />
-                                            </View>
+                                            </TouchableOpacity>
                                             <View style={styles.binDetail}>
                                                 <View style={styles.binLabel}>
                                                     <View style={styles.binLabelLeft}>

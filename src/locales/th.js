@@ -8,5 +8,7 @@ export default {
     newTrashButton: 'เลือกหมวดหมู่ขยะใหม่',
     tip: 'ข้อเเนะนำ',
     binTip: 'ถังที่ควรทิ้งคือถัง',
-    lastWordColorBin: ''
+    lastWordColorBin: '',
+    binDetails: 'ข้อมูลถังขยะ',
+    listTrash: 'รายชื่อขยะที่ควรทิ้งในถังนี้'
 }

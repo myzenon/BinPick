@@ -30,9 +30,9 @@ class Suggest extends Component {
                                     <Text style={styles.titleResult}>{locales.t('binResult')}</Text>
                                     <Text style={[styles.binResult, {color: bins[resultBin].hexColor}]}>{locales.getTrashText(bins[resultBin].color, { capitalize: true })}</Text>
                                 </View>
-                                <View style={styles.binImageWrapper}>
+                                <TouchableOpacity style={styles.binImageWrapper} onPress={() => Actions.binDetails({binKey: this.findPossibleBin()})}>
                                     <Image style={styles.binImage} source={bins[this.findPossibleBin()].image} />
-                                </View>
+                                </TouchableOpacity>
                             </View>
                             <View style={styles.buttonWrapper}>
                                 <TouchableOpacity style={styles.selectNewTrashButton} onPress={() => Actions.category({type: ActionConst.POP_TO})}>
@@ -48,9 +48,9 @@ class Suggest extends Component {
                                 <View style={styles.binSuggestWrapper}>
                                     <View style={styles.binSuggest}>
                                         <Text style={styles.binSuggestName}>{locales.t('binTip')} {locales.getTrashText(bins[this.props.trash.bins[0]].color)} {locales.t('lastWordColorBin')}</Text>
-                                        <View style={styles.binSuggestImageWrapper}>
+                                        <TouchableOpacity style={styles.binSuggestImageWrapper} onPress={() => Actions.binDetails({binKey: this.props.trash.bins[0]})}>
                                             <Image style={styles.binSuggestImage} source={bins[this.props.trash.bins[0]].image} />
-                                        </View>
+                                        </TouchableOpacity>
                                     </View>
                                 </View>
                                 {

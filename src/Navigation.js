@@ -7,6 +7,7 @@ import Trash from './components/Trash'
 import Category from './components/Category'
 import Statistics from './components/Statistics'
 import Suggest from './components/Suggest'
+import BinDetails from './components/BinDetails'
 
 
 class RouterWithRedux extends Component {
@@ -61,11 +62,12 @@ const renderStatusBar = (routeName) => {
 export default () => (
     <RouterWithRedux renderStatusBar={renderStatusBar}>
         <Scene key="root">
-            <Scene key="main" component={Main} hideNavBar initial />
+            <Scene key="main" component={Main} hideNavBar />
             <Scene key="category" component={Category} hideNavBar />
             <Scene key="trash" component={Trash} hideNavBar />
             <Scene key="statistics" component={Statistics} hideNavBar />
             <Scene key="suggest" component={Suggest} hideNavBar />
+            <Scene key="binDetails" component={BinDetails} hideNavBar />
         </Scene>
     </RouterWithRedux>
 )
