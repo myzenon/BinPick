@@ -10,6 +10,5 @@ export default {
     binTip: 'This trash should be in the',
     lastWordColorBin: 'bin',
     binDetails: 'Bin Information',
-    Description: 'Description',
     listTrash: 'List Trash'
 }

@@ -53,7 +53,11 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         color: '#616161'
     },
+<<<<<<< HEAD
     description: {
+=======
+    binDescription: {
+>>>>>>> Update BinDetails Component
         fontSize: 14,
         color: '#424242'
     },
@@ -72,6 +76,7 @@ export default StyleSheet.create({
         color: '#616161'
     },
     listTrashWrapper: {
+<<<<<<< HEAD
     },
     trashWrapper: {
         flexDirection: 'row',
@@ -88,13 +93,39 @@ export default StyleSheet.create({
     },
     trashIndex: {
         fontSize: 15
+=======
+        // backgroundColor: 'orange'
+    },
+    trashWrapper: {
+        height: 40,
+        flexDirection: 'row'
+    },
+    trashIndexWrapper: {
+        // flex: 1,
+        paddingLeft: 30,
+        paddingRight: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'pink'
+    },
+    trashIndex: {
+        fontSize: 18
+>>>>>>> Update BinDetails Component
     },
     trashNameWrapper: {
         flex: 3,
         paddingLeft: 15,
+<<<<<<< HEAD
         justifyContent: 'center' 
     },
     trashName: {
         fontSize: 15
+=======
+        justifyContent: 'center',
+        // backgroundColor: 'yellow'
+    },
+    trashName: {
+        fontSize: 18
+>>>>>>> Update BinDetails Component
     }
 })

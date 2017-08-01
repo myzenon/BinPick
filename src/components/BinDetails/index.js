@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import { View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import Header from '../Header'
@@ -6,6 +7,14 @@ import elevation from '../../utils/elevation'
 import locales from '../../locales'
 import bins from '../../data/bins'
 import { Actions } from 'react-native-router-flux'
+=======
+import { View, Image, ScrollView, Text } from 'react-native'
+import {} from 'native-base'
+import styles from './styles'
+import Header from '../Suggest/Header'
+import elevation from '../../utils/elevation'
+import locales from '../../locales'
+>>>>>>> Update BinDetails Component
 
 export default class BinDetails extends Component {
 
