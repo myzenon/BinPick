@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
 import { View, Image, ScrollView, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import Header from '../Header'
@@ -7,18 +6,6 @@ import elevation from '../../utils/elevation'
 import locales from '../../locales'
 import bins from '../../data/bins'
 import { Actions } from 'react-native-router-flux'
-=======
-import { View, Image, ScrollView, Text } from 'react-native'
-import {} from 'native-base'
-import styles from './styles'
-import Header from '../Header'
-import elevation from '../../utils/elevation'
-import locales from '../../locales'
-<<<<<<< HEAD
->>>>>>> Update BinDetails Component
-=======
-import bins from '../../data/bins'
->>>>>>> Update Image in  BinsDetail Component
 
 export default class BinDetails extends Component {
 
@@ -76,12 +63,31 @@ export default class BinDetails extends Component {
                                     <TouchableOpacity style={styles.imageWrapper} key={binKey} onPress={ () => this.selectBin(binKey) }>
                                          <Image style={styles.binImage} source={ this.state.binsSelected[binKey] ? bins[binKey].image2.open : bins[binKey].image2.close } /> 
                                     </TouchableOpacity>
+=======
+import bins from '../../data/bins'
+
+export default class BinDetails extends Component {
+    render() {
+        return (
+            <ScrollView>
+                <Header style={styles.header} title={locales.t('binDetails')} />
+                <View style={styles.binsWrapper}>
+                    <View style={styles.binsImageWrapper}>
+                        {
+                            Object.keys(bins).map((bin) => {
+                                console.log(bin)
+                                return (
+                                    <View style={styles.imageWrapper}>
+                                        <Image style={styles.binImage} source={bin.image2.open} />
+                                    </View>
+>>>>>>> d6decf58e6900b100f30aa049e2b8f87aac5b05b
                                 )
                             })
                         }
                     </View>
                     <View style={styles.cardWrapper}>
                         <View style={[styles.descriptionCard, elevation(10)]}>
+<<<<<<< HEAD
                             <View style={styles.imageDescriptionWrapper}>
                                  <Image style={styles.imageDescription} source={bins[binSelected].image} />
                             </View>
@@ -92,10 +98,18 @@ export default class BinDetails extends Component {
                                 <View>
                                     <Text style={styles.description}>{locales.getTrashText(bins[binSelected].description)}</Text>
                                 </View>
+=======
+                            <View style={styles.binDescriptionTitleWrapper}>
+                                <Text style={styles.binDescriptionTitle}>{locales.t('Description')}</Text>
+                            </View>
+                            <View>
+                                <Text style={styles.binDescription}>rjgkejrgbrkejgbrjkgebrejkgvjvjebverbvjrhebvhjervbehjrvbrehjvberjhvbrehjvbrehjvbehrjbvhrebvhejrbvhjerbvehrbvehrjvbehrjvb</Text>
+>>>>>>> d6decf58e6900b100f30aa049e2b8f87aac5b05b
                             </View>
                         </View>
                         <View style={[styles.listTrashCard, elevation(10)]}>
                             <View style={styles.listTrashTitleWrapper}>
+<<<<<<< HEAD
                                 <Text style={styles.binDescriptionTitle}>{locales.t('listTrash')}</Text>
                             </View>
                             <View style={styles.listTrashWrapper}>
@@ -113,6 +127,19 @@ export default class BinDetails extends Component {
                                         )
                                     })
                                 }
+=======
+                                <Text style={styles.binDescriptionTitle}>List Trash</Text>
+                            </View>
+                            <View style={styles.listTrashWrapper}>
+                                <View style={styles.trashWrapper}>
+                                    <View style={styles.trashIndexWrapper}>
+                                        <Text style={styles.trashIndex}>1</Text>
+                                    </View>
+                                    <View style={styles.trashNameWrapper}>
+                                        <Text style={styles.trashName}>tissue</Text>
+                                    </View>
+                                </View>
+>>>>>>> d6decf58e6900b100f30aa049e2b8f87aac5b05b
                             </View>
                         </View>
                     </View>

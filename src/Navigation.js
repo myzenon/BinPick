@@ -62,7 +62,7 @@ const renderStatusBar = (routeName) => {
 export default () => (
     <RouterWithRedux renderStatusBar={renderStatusBar}>
         <Scene key="root">
-            <Scene key="main" component={Main} hideNavBar initial />
+            <Scene key="main" component={Main} hideNavBar />
             <Scene key="category" component={Category} hideNavBar />
             <Scene key="trash" component={Trash} hideNavBar />
             <Scene key="statistics" component={Statistics} hideNavBar />
