@@ -20,7 +20,7 @@ class Statistics extends Component {
         return (bin / allTrash) * 100
     }
     getBinAmount(bin) {
-        return (this.props.remote_bin_stats[bin] + this.props.local_bin_stats[bin]).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+        return (parseInt(this.props.remote_bin_stats[bin]) + parseInt(this.props.local_bin_stats[bin])).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
     }
     render() {
         return (
